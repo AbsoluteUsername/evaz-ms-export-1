@@ -87,13 +87,11 @@ export function ServicesSection({
         </div>
 
         {/* Service cards grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16 ${
-          currentServices.length <= 3 ? 'xl:grid-cols-3 max-w-5xl mx-auto' : ''
-        }`}>
+        <div className="flex flex-wrap justify-center gap-6 mb-16">
           {currentServices.map((service, index) => (
             <div
               key={service.id}
-              className="animate-fade-in"
+              className="animate-fade-in w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] max-w-sm"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <ServiceCard

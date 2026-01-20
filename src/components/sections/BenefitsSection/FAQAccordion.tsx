@@ -16,7 +16,7 @@ function FAQItem({ item, isOpen, onToggle }: { item: FAQ; isOpen: boolean; onTog
         className="w-full flex items-center justify-between py-5 text-left group"
       >
         <span
-          className={`text-base font-medium transition-colors ${
+          className={`text-base font-medium transition-colors duration-200 ${
             isOpen ? 'text-teal-600 dark:text-teal-400' : 'text-stone-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400'
           }`}
           style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -24,23 +24,24 @@ function FAQItem({ item, isOpen, onToggle }: { item: FAQ; isOpen: boolean; onTog
           {item.question}
         </span>
         <ChevronDown
-          className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-300 ${
+          className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-200 ${
             isOpen ? 'rotate-180 text-teal-600 dark:text-teal-400' : 'text-stone-400'
           }`}
           strokeWidth={1.5}
         />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-96 pb-5' : 'max-h-0'
-        }`}
+        className="grid transition-[grid-template-rows] duration-200 ease-out"
+        style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
       >
-        <p
-          className="text-stone-600 dark:text-stone-400 leading-relaxed pr-8"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
-          {item.answer}
-        </p>
+        <div className="overflow-hidden">
+          <p
+            className="text-stone-600 dark:text-stone-400 leading-relaxed pr-8 pb-5"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            {item.answer}
+          </p>
+        </div>
       </div>
     </div>
   )

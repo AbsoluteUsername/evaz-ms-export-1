@@ -21,7 +21,7 @@ export function HeroSection({ content, onPrimaryCta, onSecondaryCta }: HeroSecti
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/hero-section/hero-section-bg-img.webp')" }}
+        style={{ backgroundImage: "url('/assets/hero-section/hero-section-bg-team-front.webp')" }}
       />
       {/* Teal overlay for better text readability */}
       <div className="absolute inset-0 bg-teal-900/60 dark:bg-teal-950/70" />

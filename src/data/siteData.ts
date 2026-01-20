@@ -41,10 +41,10 @@ export const contact: Contact = {
     href: 'mailto:ehwazms@gmail.com',
   },
   socialMedia: [
-    { id: 'facebook', platform: 'Facebook', url: '#', icon: 'facebook', active: true },
-    { id: 'instagram', platform: 'Instagram', url: '#', icon: 'instagram', active: true },
-    { id: 'linkedin', platform: 'LinkedIn', url: '#', icon: 'linkedin', active: true },
-    { id: 'telegram', platform: 'Telegram', url: '#', icon: 'telegram', active: true },
+    { id: 'facebook', platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585648986173&locale=uk_UA', icon: 'facebook', active: true },
+    { id: 'instagram', platform: 'Instagram', url: 'https://www.instagram.com/evaz.ms_consult/', icon: 'instagram', active: true },
+    { id: 'linkedin', platform: 'LinkedIn', url: '#', icon: 'linkedin', active: false },
+    { id: 'telegram', platform: 'Telegram', url: '#', icon: 'telegram', active: false },
   ],
 }
 

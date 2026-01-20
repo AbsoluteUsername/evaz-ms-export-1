@@ -1,6 +1,7 @@
 'use client'
 
-import { Check, AlertTriangle, Sparkles } from 'lucide-react'
+import { useState } from 'react'
+import { Check, AlertTriangle, Sparkles, ChevronDown } from 'lucide-react'
 import type { PremiumOffer } from '@/types'
 
 interface PremiumOfferCardProps {
@@ -8,7 +9,26 @@ interface PremiumOfferCardProps {
   onCtaClick: (packageName: string) => void
 }
 
+function getPunktPlural(count: number): string {
+  const lastTwo = Math.abs(count) % 100
+  const lastOne = lastTwo % 10
+
+  if (lastTwo >= 11 && lastTwo <= 19) {
+    return 'пунктів'
+  }
+  if (lastOne === 1) {
+    return 'пункт'
+  }
+  if (lastOne >= 2 && lastOne <= 4) {
+    return 'пункти'
+  }
+  return 'пунктів'
+}
+
 export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const hasMoreItems = offer.includes.length > 6
+  const remainingCount = offer.includes.length - 6
   return (
     <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 text-white">
       {/* Decorative elements */}
@@ -53,7 +73,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                 Що входить
               </h4>
               <div className="grid grid-cols-1 gap-3">
-                {offer.includes.slice(0, 6).map((item, index) => (
+                {(isExpanded ? offer.includes : offer.includes.slice(0, 6)).map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-5 h-5 rounded-full bg-teal-500/20 flex items-center justify-center mt-0.5">
                       <Check className="w-3 h-3 text-teal-400" strokeWidth={2} />
@@ -66,13 +86,24 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                     </span>
                   </div>
                 ))}
-                {offer.includes.length > 6 && (
-                  <p
-                    className="text-sm text-teal-400 font-medium pl-8"
+                {hasMoreItems && (
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="flex items-center gap-1 text-sm text-teal-400 font-medium pl-8 hover:text-teal-300 transition-colors"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
-                    + ще {offer.includes.length - 6} пунктів
-                  </p>
+                    {isExpanded ? (
+                      <>
+                        <span>Згорнути</span>
+                        <ChevronDown className="w-4 h-4 rotate-180 transition-transform" />
+                      </>
+                    ) : (
+                      <>
+                        <span>+ ще {remainingCount} {getPunktPlural(remainingCount)}</span>
+                        <ChevronDown className="w-4 h-4 transition-transform" />
+                      </>
+                    )}
+                  </button>
                 )}
               </div>
             </div>
