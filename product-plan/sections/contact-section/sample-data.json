@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "models": {
+      "formConfig": "Contact form configuration including fields, validation rules, and messages.",
+      "formField": "Individual form field with type, label, placeholder, and validation.",
+      "ctaVariation": "Different call-to-action buttons used throughout the landing page.",
+      "emailTemplate": "Email notification template structure for form submissions.",
+      "telegramNotification": "Telegram notification configuration for form submissions."
+    },
+    "relationships": [
+      "FormConfig defines the structure of the contact form modal",
+      "FormFields are validated before submission",
+      "CTAVariations open the contact form with different contexts",
+      "EmailTemplate and TelegramNotification are triggered on successful form submission"
+    ]
+  },
+  "formConfig": {
+    "title": "Отримати консультацію",
+    "subtitle": "Ми зв'яжемось з Вами, щоб уточнити деталі та запропонувати оптимальне рішення.",
+    "fields": [
+      {
+        "name": "name",
+        "type": "text",
+        "label": "Ім'я",
+        "placeholder": "Введіть ваше ім'я",
+        "required": true,
+        "validation": {
+          "minLength": 2,
+          "errorMessage": "Будь ласка, введіть ваше ім'я"
+        }
+      },
+      {
+        "name": "phone",
+        "type": "tel",
+        "label": "Телефон",
+        "placeholder": "+380 __ ___ ____",
+        "required": true,
+        "mask": "+380 ## ### ####",
+        "validation": {
+          "pattern": "^\\+380\\d{9}$",
+          "errorMessage": "Будь ласка, введіть коректний номер телефону"
+        }
+      },
+      {
+        "name": "clientType",
+        "type": "select",
+        "label": "Тип клієнта",
+        "placeholder": "Оберіть тип клієнта",
+        "required": true,
+        "options": [
+          { "value": "fop", "label": "ФОП" },
+          { "value": "tov", "label": "ТОВ" },
+          { "value": "individual", "label": "Фізична особа" }
+        ],
+        "validation": {
+          "errorMessage": "Будь ласка, оберіть тип клієнта"
+        }
+      },
+      {
+        "name": "comment",
+        "type": "textarea",
+        "label": "Коментар / питання",
+        "placeholder": "Ваше питання або коментар (необов'язково)",
+        "required": false,
+        "maxLength": 500
+      },
+      {
+        "name": "packageName",
+        "type": "hidden",
+        "required": true,
+        "autoPopulated": true
+      }
+    ],
+    "submitButton": {
+      "text": "Надіслати заявку",
+      "loadingText": "Надсилаємо..."
+    },
+    "messages": {
+      "success": "Дякуємо! Ми отримали Вашу заявку і зв'яжемось з вами найближчим часом.",
+      "error": "Виникла помилка. Будь ласка, спробуйте ще раз або зателефонуйте нам за номером +380970094566"
+    }
+  },
+  "ctaVariations": [
+    {
+      "id": "service-card",
+      "context": "Service cards",
+      "text": "Отримати консультацію",
+      "action": "open-modal",
+      "autoPopulatePackage": true
+    },
+    {
+      "id": "premium-offer",
+      "context": "Premium seasonal offer",
+      "text": "Перевірити свій податковий кабінет",
+      "action": "open-modal",
+      "packageName": "Річна звітність + Аудит кабінету платника податків"
+    },
+    {
+      "id": "hero-primary",
+      "context": "Hero section",
+      "text": "Обрати пакет послуг",
+      "action": "scroll-to-services"
+    },
+    {
+      "id": "hero-secondary",
+      "context": "Hero section secondary",
+      "text": "Отримати консультацію",
+      "action": "open-modal",
+      "packageName": "Загальна консультація"
+    },
+    {
+      "id": "after-objections",
+      "context": "After objections section",
+      "text": "Отримати безкоштовну консультацію",
+      "action": "open-modal",
+      "packageName": "Безкоштовна консультація"
+    }
+  ],
+  "contactInfo": {
+    "phone": {
+      "display": "+380 97 009 45 66",
+      "raw": "+380970094566",
+      "href": "tel:+380970094566"
+    },
+    "email": {
+      "primary": "ehwazms@gmail.com",
+      "href": "mailto:ehwazms@gmail.com"
+    },
+    "messengers": [
+      {
+        "id": "telegram",
+        "name": "Telegram",
+        "icon": "telegram",
+        "url": "#",
+        "active": true
+      },
+      {
+        "id": "viber",
+        "name": "Viber",
+        "icon": "viber",
+        "url": "#",
+        "active": true
+      }
+    ],
+    "workingHours": {
+      "days": "Пн-Пт",
+      "hours": "9:00 - 18:00"
+    }
+  },
+  "emailNotification": {
+    "to": "ehwazms@gmail.com",
+    "subjectTemplate": "Нова заявка з сайту EVAZ-MS - {packageName}",
+    "bodyTemplate": {
+      "header": "Нова заявка з сайту EVAZ-MS",
+      "fields": [
+        { "label": "Пакет", "key": "packageName", "icon": "package" },
+        { "label": "Ім'я", "key": "name", "icon": "user" },
+        { "label": "Телефон", "key": "phone", "icon": "phone" },
+        { "label": "Тип клієнта", "key": "clientType", "icon": "building" },
+        { "label": "Коментар", "key": "comment", "icon": "message", "fallback": "Не вказано" },
+        { "label": "Дата та час", "key": "timestamp", "icon": "clock" }
+      ],
+      "footer": "Автоматичне повідомлення з evaz-ms.com"
+    }
+  },
+  "telegramNotification": {
+    "phone": "+380970094566",
+    "messageTemplate": {
+      "header": "Нова заявка з сайту EVAZ-MS",
+      "fields": [
+        { "label": "Пакет", "key": "packageName", "emoji": "📦" },
+        { "label": "Ім'я", "key": "name", "emoji": "👤" },
+        { "label": "Телефон", "key": "phone", "emoji": "📱" },
+        { "label": "Тип клієнта", "key": "clientType", "emoji": "🏢" },
+        { "label": "Коментар", "key": "comment", "emoji": "💬", "fallback": "Не вказано" },
+        { "label": "Час", "key": "timestamp", "emoji": "🕐" }
+      ]
+    }
+  },
+  "sectionContent": {
+    "title": "Зв'яжіться з нами",
+    "subtitle": "Оберіть зручний для вас спосіб зв'язку",
+    "ctaText": "Або залиште заявку і ми вам зателефонуємо"
+  }
+}

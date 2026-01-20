@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "models": {
+      "company": "Core brand identity including company name, tagline, founding year, and company story.",
+      "contact": "All contact information including phone, email, and social media links.",
+      "navigation": "Main navigation menu items for the header.",
+      "socialMedia": "Social media platform links with active status."
+    },
+    "relationships": [
+      "Company information is displayed in the header and footer",
+      "Contact information appears in header, footer, and contact section",
+      "Navigation items link to different sections of the landing page",
+      "Social media links are displayed in the footer"
+    ]
+  },
+  "company": {
+    "name": "EVAZ-MS",
+    "tagline": "Ми складне робимо простим",
+    "foundedYear": 2021,
+    "legalStatus": "Сервісна компанія з фізичним офісом",
+    "location": "Україна (по всій території)",
+    "physicalOffice": true,
+    "story": {
+      "shortDescription": "ЕВАЗ-МС працює з 2021 року. Ми починали як невеликий офіс бухгалтерського супроводу, а з часом виросли у компанію з командою професійних бухгалтерів та системною роботою.",
+      "milestone2024": "У 2024–2025 роках до управління приєдналася друга власниця — експерт зі стратегії, автоматизації, оптимізації та розвитку бізнесу, що посилило компанію подвійною експертизою.",
+      "currentState": "Сьогодні ЕВАЗ-МС — це стабільна сервісна компанія з фізичним офісом, подвійним контролем якості та повним супроводом ФОП, ТОВ і фізичних осіб."
+    }
+  },
+  "contact": {
+    "phone": {
+      "display": "+380 97 009 45 66",
+      "raw": "+380970094566",
+      "href": "tel:+380970094566"
+    },
+    "email": {
+      "primary": "ehwazms@gmail.com",
+      "href": "mailto:ehwazms@gmail.com"
+    },
+    "socialMedia": [
+      {
+        "id": "facebook",
+        "platform": "Facebook",
+        "url": "#",
+        "icon": "facebook",
+        "active": true
+      },
+      {
+        "id": "instagram",
+        "platform": "Instagram",
+        "url": "#",
+        "icon": "instagram",
+        "active": true
+      },
+      {
+        "id": "linkedin",
+        "platform": "LinkedIn",
+        "url": "#",
+        "icon": "linkedin",
+        "active": true
+      },
+      {
+        "id": "telegram",
+        "platform": "Telegram",
+        "url": "#",
+        "icon": "telegram",
+        "active": true
+      }
+    ]
+  },
+  "navigation": [
+    {
+      "id": "services",
+      "label": "Послуги",
+      "href": "#services",
+      "type": "anchor"
+    },
+    {
+      "id": "about",
+      "label": "Про нас",
+      "href": "#about",
+      "type": "anchor"
+    },
+    {
+      "id": "contact",
+      "label": "Контакти",
+      "href": "#contact",
+      "type": "anchor"
+    }
+  ],
+  "footer": {
+    "copyright": "EVAZ-MS",
+    "year": 2025,
+    "rights": "Усі права захищено"
+  }
+}

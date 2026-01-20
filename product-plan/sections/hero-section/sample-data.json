@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "models": {
+      "hero": "Main hero section content including headline, subheadline, and call-to-action.",
+      "audience": "Target audience profiles describing who the service is for."
+    },
+    "relationships": [
+      "Hero content is the first thing visitors see on the landing page",
+      "Audience profiles help visitors identify if the service is right for them",
+      "The CTA button scrolls to the services section"
+    ]
+  },
+  "hero": {
+    "headline": "Ми робимо складне простим",
+    "subheadline": "Від щоденного супроводу ФОП та ТОВ до аудиту фізичних осіб та річної звітності",
+    "description": "Обирайте формат, який підходить саме вам",
+    "cta": {
+      "text": "Обрати пакет послуг",
+      "action": "scroll-to-services"
+    },
+    "secondaryCta": {
+      "text": "Отримати консультацію",
+      "action": "open-modal"
+    }
+  },
+  "audiences": [
+    {
+      "id": "fop",
+      "type": "ФОП",
+      "title": "Фізична особа — підприємець",
+      "role": "Власник бізнесу, самозайнята особа",
+      "status": "Знає, що повинен подавати звітність, або не впевнений у правильності її подання",
+      "needs": "Професійне ведення звітності без помилок та ризиків",
+      "icon": "briefcase"
+    },
+    {
+      "id": "individual",
+      "type": "Фізична особа",
+      "title": "Фізична особа (не ФОП)",
+      "role": "Найманий працівник, приватна особа",
+      "status": "Або не впевнена, чи потрібно подавати декларацію, або знає, що повинна її подати",
+      "needs": "З'ясувати обов'язки та правильно подати декларацію",
+      "icon": "user"
+    },
+    {
+      "id": "tov",
+      "type": "ТОВ",
+      "title": "Власник малого бізнесу / керівник ТОВ",
+      "role": "Директор, засновник, співвласник",
+      "status": "Потребує професійного ведення обліку та контролю податкових зобов'язань",
+      "needs": "Надійний бухгалтерський супровід з системним контролем",
+      "icon": "building"
+    }
+  ],
+  "stats": {
+    "yearsInBusiness": 4,
+    "foundedYear": 2021,
+    "clientsServed": null,
+    "successfulReports": null,
+    "zeroFines": null
+  }
+}
