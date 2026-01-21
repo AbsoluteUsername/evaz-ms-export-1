@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+
+export const runtime = 'edge'
 import { sendContactEmail } from '@/lib/email'
 import type { ContactFormData } from '@/types'
 
