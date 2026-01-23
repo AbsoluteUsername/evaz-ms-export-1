@@ -16,32 +16,27 @@ function FAQItem({ item, isOpen, onToggle }: { item: FAQ; isOpen: boolean; onTog
         className="w-full flex items-center justify-between py-5 text-left group"
       >
         <span
-          className={`text-base font-medium transition-colors duration-200 ${
-            isOpen ? 'text-teal-600 dark:text-teal-400' : 'text-stone-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400'
+          className={`text-base font-medium ${
+            isOpen ? 'text-teal-600 dark:text-teal-400' : 'text-stone-900 dark:text-white'
           }`}
-          
         >
           {item.question}
         </span>
         <ChevronDown
-          className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-200 ${
+          className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-200 ease-out ${
             isOpen ? 'rotate-180 text-teal-600 dark:text-teal-400' : 'text-stone-400'
           }`}
           strokeWidth={1.5}
         />
       </button>
       <div
-        className="grid transition-[grid-template-rows] duration-200 ease-out"
-        style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+        className={`overflow-hidden transition-all duration-200 ease-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
       >
-        <div className="overflow-hidden">
-          <p
-            className="text-stone-600 dark:text-stone-400 leading-relaxed pr-8 pb-5"
-            
-          >
-            {item.answer}
-          </p>
-        </div>
+        <p className="text-stone-600 dark:text-stone-400 leading-relaxed pr-8 pb-5">
+          {item.answer}
+        </p>
       </div>
     </div>
   )

@@ -1,14 +1,8 @@
 'use client'
 
 import { useEffect, useCallback } from 'react'
-import { X, Phone, Mail, Clock, Instagram, Facebook, Send } from 'lucide-react'
+import { X, Phone, Mail, Clock } from 'lucide-react'
 import type { NavigationItem, Contact, Company } from '@/types'
-
-const socialIconMap: Record<string, typeof Instagram> = {
-  instagram: Instagram,
-  facebook: Facebook,
-  telegram: Send,
-}
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -170,31 +164,6 @@ export function MobileMenu({
               </div>
             </div>
           )}
-
-          {/* Social Media Icons */}
-          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-stone-200 dark:border-stone-700">
-            <span className="text-sm font-medium text-stone-500 dark:text-stone-400">Соцмережі:</span>
-            <div className="flex items-center gap-3">
-              {contact.socialMedia
-                .filter((social) => social.active)
-                .map((social) => {
-                  const Icon = socialIconMap[social.id.toLowerCase()]
-                  if (!Icon) return null
-                  return (
-                    <a
-                      key={social.id}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-                      aria-label={social.platform}
-                    >
-                      <Icon className="w-5 h-5" strokeWidth={1.5} />
-                    </a>
-                  )
-                })}
-            </div>
-          </div>
         </div>
       </div>
     </>

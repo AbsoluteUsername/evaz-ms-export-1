@@ -30,9 +30,7 @@ export function ClientCard({ client, onClick }: ClientCardProps) {
         bg-white dark:bg-stone-900
         border-2 border-stone-200 dark:border-stone-700
         p-8
-        shadow-lg hover:shadow-2xl
-        transition-all duration-300
-        hover:-translate-y-2
+        shadow-lg
         ${onClick || client.website ? 'cursor-pointer' : ''}
       `}
       onClick={handleClick}
@@ -65,10 +63,7 @@ export function ClientCard({ client, onClick }: ClientCardProps) {
               src={client.logo}
               alt={`${client.name} logo`}
               fill
-              className="
-                object-contain p-4
-                transition-all duration-500
-              "
+              className="object-contain p-4"
               sizes="(max-width: 768px) 100vw, 400px"
             />
           </div>

@@ -100,7 +100,7 @@ export function Header({
             ))}
           </nav>
 
-          {/* Right Section: Social Icons & CTA */}
+          {/* Right Section: Social Icons & CTA (Desktop) */}
           <div className="hidden md:flex items-center gap-4">
             {/* Social Media Icons */}
             <div className="flex items-center gap-3">
@@ -134,14 +134,39 @@ export function Header({
             </a>
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => onMenuToggle?.(true)}
-            className="md:hidden p-2 -mr-2 text-stone-700 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-lg transition-colors"
-            aria-label="Відкрити меню"
-          >
-            <Menu className="w-6 h-6" strokeWidth={1.5} />
-          </button>
+          {/* Mobile: Social Icons & Hamburger */}
+          <div className="md:hidden flex items-center gap-3">
+            {/* Social Media Icons (Mobile) */}
+            <div className="flex items-center gap-2.5">
+              {contact.socialMedia
+                .filter((social) => social.active)
+                .map((social) => {
+                  const Icon = socialIconMap[social.id.toLowerCase()]
+                  if (!Icon) return null
+                  return (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                      aria-label={social.platform}
+                    >
+                      <Icon className="w-5 h-5" strokeWidth={1.5} />
+                    </a>
+                  )
+                })}
+            </div>
+
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => onMenuToggle?.(true)}
+              className="p-2 -mr-2 text-stone-700 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-lg transition-colors"
+              aria-label="Відкрити меню"
+            >
+              <Menu className="w-6 h-6" strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
       </div>
 

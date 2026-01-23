@@ -176,7 +176,7 @@ export function ClientSlider({
       {/* Slider Container */}
       <div className="relative overflow-hidden">
         <div
-          className="flex transition-transform duration-500 ease-out"
+          className="flex transition-transform duration-300 ease-in-out will-change-transform"
           style={{
             transform: `translateX(-${activeIndex * 100}%)`
           }}
