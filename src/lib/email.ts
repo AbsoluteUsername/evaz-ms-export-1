@@ -23,6 +23,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
       day: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
+      timeZone: 'Europe/Kyiv',
     })
 
     const subject = `Нова заявка з сайту EVAZ-MS - ${packageName}`

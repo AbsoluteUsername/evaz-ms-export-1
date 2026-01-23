@@ -49,7 +49,7 @@ export const contact: Contact = {
   ],
   workingHours: {
     days: 'Пн-Пт',
-    hours: '9:00 - 18:00',
+    hours: '9:00 - 17:00',
   },
 }
 
@@ -430,7 +430,7 @@ export const contactInfo: ContactInfo = {
     { id: 'telegram', name: 'Telegram', icon: 'telegram', url: 'https://t.me/evazms', active: true },
     { id: 'viber', name: 'Viber', icon: 'viber', url: '#', active: true },
   ],
-  workingHours: { days: 'Пн-Пт', hours: '9:00 - 18:00' },
+  workingHours: { days: 'Пн-Пт', hours: '9:00 - 17:00' },
 }
 
 export const contactSectionContent: SectionContent = {
