@@ -1,26 +1,12 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Montserrat, IBM_Plex_Mono } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
-
-const playfair = Playfair_Display({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700'],
-})
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
   variable: '--font-montserrat',
   weight: ['400', '500', '600', '700'],
-})
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-ibm-plex-mono',
-  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {
@@ -42,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="uk" className={`${playfair.variable} ${montserrat.variable} ${ibmPlexMono.variable}`}>
+    <html lang="uk" className={montserrat.variable}>
       <body className="min-h-screen bg-white dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-body">
         {children}
       </body>

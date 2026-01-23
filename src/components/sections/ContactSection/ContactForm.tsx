@@ -161,13 +161,13 @@ export function ContactForm({
           </div>
           <h3
             className="text-2xl md:text-3xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             Дякуємо!
           </h3>
           <p
             className="text-white/90 text-lg leading-relaxed max-w-md mx-auto"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {config.messages.success}
           </p>
@@ -188,20 +188,20 @@ export function ContactForm({
           </div>
           <h3
             className="text-2xl md:text-3xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             Помилка
           </h3>
           <p
             className="text-white/90 text-lg leading-relaxed max-w-md mx-auto mb-6"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {config.messages.error}
           </p>
           <button
             onClick={() => setFormState('idle')}
             className="px-6 py-3 rounded-xl bg-white text-rose-600 font-semibold transition-all hover:bg-white/90 hover:scale-105"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             Спробувати знову
           </button>
@@ -225,7 +225,7 @@ export function ContactForm({
                 <label
                   htmlFor={field.name}
                   className="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  
                 >
                   {field.label}
                   {field.required && <span className="text-rose-500 ml-1">*</span>}
@@ -247,7 +247,7 @@ export function ContactForm({
                         : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                       }
                     `}
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   >
                     <option value="">{field.placeholder}</option>
                     {field.options?.map((option) => (
@@ -276,7 +276,7 @@ export function ContactForm({
                         : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                       }
                     `}
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   />
                 ) : field.name === 'phone' ? (
                   <input
@@ -298,7 +298,7 @@ export function ContactForm({
                         : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                       }
                     `}
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   />
                 ) : (
                   <input
@@ -319,14 +319,14 @@ export function ContactForm({
                         : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                       }
                     `}
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   />
                 )}
 
                 {errors[field.name] && (
                   <p
                     className="mt-2 text-sm text-rose-500 flex items-center gap-1.5 animate-fade-in"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   >
                     <AlertCircle className="w-4 h-4" />
                     {errors[field.name]}
@@ -350,7 +350,7 @@ export function ContactForm({
               disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0
               active:translate-y-0
             `}
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {formState === 'submitting' ? (
               <>
@@ -378,13 +378,13 @@ export function ContactForm({
           <div className="mb-8">
             <h3
               className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-white mb-2"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              
             >
               {config.title}
             </h3>
             <p
               className="text-stone-600 dark:text-stone-400"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {config.subtitle}
             </p>
@@ -402,7 +402,7 @@ export function ContactForm({
                   <label
                     htmlFor={field.name}
                     className="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   >
                     {field.label}
                     {field.required && <span className="text-rose-500 ml-1">*</span>}
@@ -424,7 +424,7 @@ export function ContactForm({
                           : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                         }
                       `}
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                     >
                       <option value="">{field.placeholder}</option>
                       {field.options?.map((option) => (
@@ -453,7 +453,7 @@ export function ContactForm({
                           : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                         }
                       `}
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                     />
                   ) : field.name === 'phone' ? (
                     <input
@@ -475,7 +475,7 @@ export function ContactForm({
                           : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                         }
                       `}
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                     />
                   ) : (
                     <input
@@ -496,14 +496,14 @@ export function ContactForm({
                           : 'border-stone-200 dark:border-stone-700 focus:border-teal-500 dark:focus:border-teal-400'
                         }
                       `}
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                     />
                   )}
 
                   {errors[field.name] && (
                     <p
                       className="mt-2 text-sm text-rose-500 flex items-center gap-1.5 animate-fade-in"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                     >
                       <AlertCircle className="w-4 h-4" />
                       {errors[field.name]}
@@ -527,7 +527,7 @@ export function ContactForm({
                 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0
                 active:translate-y-0
               `}
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {formState === 'submitting' ? (
                 <>

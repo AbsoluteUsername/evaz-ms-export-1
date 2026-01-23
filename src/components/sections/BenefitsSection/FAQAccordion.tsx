@@ -19,7 +19,7 @@ function FAQItem({ item, isOpen, onToggle }: { item: FAQ; isOpen: boolean; onTog
           className={`text-base font-medium transition-colors duration-200 ${
             isOpen ? 'text-teal-600 dark:text-teal-400' : 'text-stone-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400'
           }`}
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {item.question}
         </span>
@@ -37,7 +37,7 @@ function FAQItem({ item, isOpen, onToggle }: { item: FAQ; isOpen: boolean; onTog
         <div className="overflow-hidden">
           <p
             className="text-stone-600 dark:text-stone-400 leading-relaxed pr-8 pb-5"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {item.answer}
           </p>

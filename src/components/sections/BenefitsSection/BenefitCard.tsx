@@ -41,7 +41,7 @@ export function BenefitCard({ benefit, index }: BenefitCardProps) {
         {/* Title */}
         <h3
           className="text-lg font-semibold text-stone-900 dark:text-white mb-3 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          
         >
           {title}
         </h3>
@@ -49,7 +49,7 @@ export function BenefitCard({ benefit, index }: BenefitCardProps) {
         {/* Description */}
         <p
           className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {description}
         </p>

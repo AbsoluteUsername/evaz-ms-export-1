@@ -20,7 +20,7 @@ export function ServiceTabs({ categories, activeTab, onTabChange }: ServiceTabsP
               ? 'bg-teal-600 text-white shadow-lg shadow-teal-500/30'
               : 'bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400'
           }`}
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {category.title}
         </button>

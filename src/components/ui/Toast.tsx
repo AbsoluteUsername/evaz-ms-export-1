@@ -34,7 +34,7 @@ export function Toast({ message, type, isVisible, onDismiss, duration = 5000 }: 
         <Icon className="w-5 h-5 flex-shrink-0" strokeWidth={1.5} />
         <p
           className="text-sm font-medium"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {message}
         </p>

@@ -45,7 +45,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
           <div className="px-6 pt-6 pb-2">
             <h2
               className="text-xl font-bold text-stone-900 dark:text-white pr-8"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              
             >
               {title}
             </h2>

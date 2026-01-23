@@ -6,6 +6,7 @@ import { Modal, Toast } from '@/components/ui'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { BenefitsSection } from '@/components/sections/BenefitsSection'
+import { ClientsSection } from '@/components/sections/ClientsSection'
 import { ContactSection, ContactForm } from '@/components/sections/ContactSection'
 import {
   company,
@@ -24,6 +25,7 @@ import {
   formConfig,
   contactInfo,
   contactSectionContent,
+  clientsSectionContent,
 } from '@/data/siteData'
 import type { ContactFormData } from '@/types'
 
@@ -86,7 +88,7 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <main className="flex-1 pt-[60px] md:pt-[70px]">
+      <main className="flex-1 pt-[70px] md:pt-[80px]">
         {/* Hero Section */}
         <HeroSection
           content={heroContent}
@@ -113,6 +115,16 @@ export default function Home() {
           differentiators={differentiators}
           faqItems={faqItems}
           onCtaClick={() => openContactModal()}
+        />
+
+        {/* Clients Section */}
+        <ClientsSection
+          content={clientsSectionContent}
+          onClientClick={(client) => {
+            if (client.website) {
+              window.open(client.website, '_blank', 'noopener,noreferrer')
+            }
+          }}
         />
 
         {/* Contact Section */}

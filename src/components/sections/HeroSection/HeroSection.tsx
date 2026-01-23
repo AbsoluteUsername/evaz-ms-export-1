@@ -34,7 +34,7 @@ export function HeroSection({ content, onPrimaryCta, onSecondaryCta }: HeroSecti
           {/* Headline */}
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in animation-delay-100"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             {content.headline}
           </h1>
@@ -42,7 +42,7 @@ export function HeroSection({ content, onPrimaryCta, onSecondaryCta }: HeroSecti
           {/* Subheadline */}
           <p
             className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-4 animate-fade-in animation-delay-200"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {content.subheadline}
           </p>
@@ -50,7 +50,7 @@ export function HeroSection({ content, onPrimaryCta, onSecondaryCta }: HeroSecti
           {/* Description */}
           <p
             className="text-base text-white/80 max-w-2xl mx-auto mb-8 animate-fade-in animation-delay-300"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {content.description}
           </p>
@@ -60,14 +60,14 @@ export function HeroSection({ content, onPrimaryCta, onSecondaryCta }: HeroSecti
             <button
               onClick={handleScrollToServices}
               className="px-8 py-4 rounded-xl bg-teal-600/70 backdrop-blur-sm border border-teal-400/30 text-white font-semibold text-lg transition-all duration-300 hover:bg-teal-600/90 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5 active:translate-y-0"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {content.cta.text}
             </button>
             <button
               onClick={onSecondaryCta}
               className="px-8 py-4 rounded-xl border-2 border-white/50 text-white font-semibold text-lg transition-all duration-300 hover:border-white hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {content.secondaryCta.text}
             </button>

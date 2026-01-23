@@ -35,19 +35,19 @@ export function BenefitsSection({
         <div className="text-center mb-12 md:mb-16">
           <span
             className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400 text-sm font-medium mb-4"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             Про нас
           </span>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-stone-900 dark:text-white mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             Чому обирають нас
           </h2>
           <p
             className="text-lg text-stone-600 dark:text-stone-400 max-w-2xl mx-auto"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             Ми поєднуємо професіоналізм, системний підхід та особисту відповідальність
           </p>
@@ -70,7 +70,7 @@ export function BenefitsSection({
         <div className="mb-16">
           <h3
             className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-white text-center mb-10"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             Наші переваги
           </h3>
@@ -98,7 +98,7 @@ export function BenefitsSection({
           <div className="flex flex-col">
             <h3
               className="text-2xl font-bold text-stone-900 dark:text-white mb-6"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              
             >
               Часті питання
             </h3>
@@ -113,7 +113,7 @@ export function BenefitsSection({
           <button
             onClick={onCtaClick}
             className="px-8 py-4 rounded-xl bg-teal-600 text-white font-semibold text-lg transition-all duration-300 hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5 active:translate-y-0"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             Отримати безкоштовну консультацію
           </button>

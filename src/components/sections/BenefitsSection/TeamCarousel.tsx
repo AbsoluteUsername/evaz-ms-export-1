@@ -43,7 +43,7 @@ export function TeamCarousel() {
       <div className="flex items-center justify-between p-6 pb-0">
         <h3
           className="text-sm font-semibold uppercase tracking-wider text-teal-100"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           Наша команда
         </h3>

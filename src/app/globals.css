@@ -36,9 +36,8 @@
   --color-neutral-950: #0c0a09;
 
   /* Typography */
-  --font-heading: 'Playfair Display', serif;
+  --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Montserrat', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
 
   /* Transitions */
   --transition-fast: 150ms;

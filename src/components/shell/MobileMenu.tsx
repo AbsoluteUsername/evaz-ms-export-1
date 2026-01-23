@@ -1,8 +1,14 @@
 'use client'
 
 import { useEffect, useCallback } from 'react'
-import { X, Phone, Mail } from 'lucide-react'
+import { X, Phone, Mail, Clock, Instagram, Facebook, Send } from 'lucide-react'
 import type { NavigationItem, Contact, Company } from '@/types'
+
+const socialIconMap: Record<string, typeof Instagram> = {
+  instagram: Instagram,
+  facebook: Facebook,
+  telegram: Send,
+}
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -82,7 +88,7 @@ export function MobileMenu({
         <div className="flex items-center justify-between h-[60px] px-5 border-b border-stone-200 dark:border-stone-700">
           <span
             className="text-xl font-bold text-teal-600"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             {company.name}
           </span>
@@ -108,7 +114,7 @@ export function MobileMenu({
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className="flex items-center gap-3 px-4 py-3.5 text-base font-medium text-stone-700 dark:text-stone-200 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-xl transition-all duration-200"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
                   {item.label}
@@ -126,7 +132,7 @@ export function MobileMenu({
               href="#contact"
               onClick={handleCtaClick}
               className="flex items-center justify-center w-full px-5 py-3.5 rounded-xl bg-teal-600 dark:bg-teal-500 text-white text-base font-semibold hover:bg-teal-700 dark:hover:bg-teal-600 transition-all duration-300 shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               Отримати консультацію
             </a>
@@ -140,20 +146,55 @@ export function MobileMenu({
         >
           <a
             href={contact.phone.href}
-            className="flex items-center gap-3 text-sm text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="flex items-center gap-3 text-base font-medium text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
           >
-            <Phone className="w-4 h-4" strokeWidth={1.5} />
+            <Phone className="w-5 h-5" strokeWidth={1.5} />
             {contact.phone.display}
           </a>
           <a
             href={contact.email.href}
-            className="flex items-center gap-3 mt-2 text-sm text-stone-500 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="flex items-center gap-3 mt-3 text-sm text-stone-500 dark:text-stone-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
           >
             <Mail className="w-4 h-4" strokeWidth={1.5} />
             {contact.email.primary}
           </a>
+
+          {/* Working Hours */}
+          {contact.workingHours && (
+            <div className="flex items-center gap-3 mt-4 pt-4 border-t border-stone-200 dark:border-stone-700">
+              <Clock className="w-5 h-5 text-teal-600 dark:text-teal-400" strokeWidth={1.5} />
+              <div className="text-sm text-stone-600 dark:text-stone-300">
+                <span className="font-medium">{contact.workingHours.days}</span>
+                <span className="mx-1.5">•</span>
+                <span>{contact.workingHours.hours}</span>
+              </div>
+            </div>
+          )}
+
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-stone-200 dark:border-stone-700">
+            <span className="text-sm font-medium text-stone-500 dark:text-stone-400">Соцмережі:</span>
+            <div className="flex items-center gap-3">
+              {contact.socialMedia
+                .filter((social) => social.active)
+                .map((social) => {
+                  const Icon = socialIconMap[social.id.toLowerCase()]
+                  if (!Icon) return null
+                  return (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                      aria-label={social.platform}
+                    >
+                      <Icon className="w-5 h-5" strokeWidth={1.5} />
+                    </a>
+                  )
+                })}
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -44,19 +44,19 @@ export function ContactSection({
         <div className="text-center mb-12 md:mb-16">
           <span
             className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 dark:bg-teal-500/20 text-teal-600 dark:text-teal-400 text-sm font-medium mb-4"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             Контакти
           </span>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-stone-900 dark:text-white mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            
           >
             {sectionContent.title}
           </h2>
           <p
             className="text-lg text-stone-600 dark:text-stone-400 max-w-2xl mx-auto"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {sectionContent.subtitle}
           </p>
@@ -87,7 +87,7 @@ export function ContactSection({
         <div className="mt-12 text-center">
           <p
             className="text-stone-500 dark:text-stone-400 text-sm"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {sectionContent.ctaText}
           </p>

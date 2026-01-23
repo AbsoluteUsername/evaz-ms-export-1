@@ -14,6 +14,7 @@ import type {
   FormConfig,
   ContactInfo,
   SectionContent,
+  ClientsSectionContent,
 } from '@/types'
 
 export const company: Company = {
@@ -44,13 +45,18 @@ export const contact: Contact = {
     { id: 'facebook', platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585648986173&locale=uk_UA', icon: 'facebook', active: true },
     { id: 'instagram', platform: 'Instagram', url: 'https://www.instagram.com/evaz.ms_consult/', icon: 'instagram', active: true },
     { id: 'linkedin', platform: 'LinkedIn', url: '#', icon: 'linkedin', active: false },
-    { id: 'telegram', platform: 'Telegram', url: '#', icon: 'telegram', active: false },
+    { id: 'telegram', platform: 'Telegram', url: 'https://t.me/evazms', icon: 'telegram', active: true },
   ],
+  workingHours: {
+    days: 'Пн-Пт',
+    hours: '9:00 - 18:00',
+  },
 }
 
 export const navigation: NavigationItem[] = [
   { id: 'services', label: 'Послуги', href: '#services', type: 'anchor' },
   { id: 'about', label: 'Про нас', href: '#about', type: 'anchor' },
+  { id: 'clients', label: 'Клієнти', href: '#clients', type: 'anchor' },
   { id: 'contact', label: 'Контакти', href: '#contact', type: 'anchor' },
 ]
 
@@ -421,7 +427,7 @@ export const contactInfo: ContactInfo = {
   phone: { display: '+380 97 009 45 66', raw: '+380970094566', href: 'tel:+380970094566' },
   email: { primary: 'ehwazms@gmail.com', href: 'mailto:ehwazms@gmail.com' },
   messengers: [
-    { id: 'telegram', name: 'Telegram', icon: 'telegram', url: '#', active: true },
+    { id: 'telegram', name: 'Telegram', icon: 'telegram', url: 'https://t.me/evazms', active: true },
     { id: 'viber', name: 'Viber', icon: 'viber', url: '#', active: true },
   ],
   workingHours: { days: 'Пн-Пт', hours: '9:00 - 18:00' },
@@ -431,4 +437,130 @@ export const contactSectionContent: SectionContent = {
   title: "Зв'яжіться з нами",
   subtitle: "Оберіть зручний для вас спосіб зв'язку",
   ctaText: 'Або залиште заявку і ми вам зателефонуємо',
+}
+
+// =============================================================================
+// Clients Section Data
+// =============================================================================
+
+export const clientsSectionContent: ClientsSectionContent = {
+  title: 'Нам довіряють',
+  clients: [
+    {
+      id: 'kaplya',
+      name: 'Капля',
+      fullName: 'ФОП Ткачук Андрій Олександрович',
+      activityType: 'Магазин сантехніки',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2011,
+      logo: '/assets/clients/kaplya.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+    {
+      id: 'victori',
+      name: 'Victori',
+      fullName: 'ФОП Тараненко Вікторія Вячеславівна',
+      activityType: 'Жіночий одяг люкс класу',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2012,
+      logo: '/assets/clients/victori.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+    {
+      id: 'sl',
+      name: 'SL',
+      fullName: 'Скрипник Олександр / Лазука Олександр',
+      activityType: 'Будівельні матеріали',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2016,
+      logo: '/assets/clients/sl.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+    {
+      id: 'divocvit',
+      name: 'ТЦ Дивоцвіт',
+      fullName: 'ТОВ Дивоцвіт КР',
+      activityType: 'Торговий центр, оренда',
+      industry: 'realestate',
+      industryIcon: 'Building2',
+      partnershipYear: 2023,
+      logo: '/assets/clients/divocvit.jpg',
+      logoType: 'photo',
+      website: undefined,
+    },
+    {
+      id: 'astel',
+      name: 'Астел Плюс',
+      fullName: 'Астел Плюс',
+      activityType: 'Смартфони, ноутбуки, ремонт',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2012,
+      logo: '/assets/clients/astel.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+    {
+      id: 'childtooth',
+      name: 'Перша дитяча стоматологія',
+      fullName: 'Перша дитяча стоматологія',
+      activityType: 'Дитяча стоматологія',
+      industry: 'medical',
+      industryIcon: 'Stethoscope',
+      partnershipYear: 2025,
+      logo: '/assets/clients/childtooth.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+  ],
+  statistics: [
+    {
+      id: 'total-clients',
+      value: 68,
+      suffix: '+',
+      label: 'клієнтів',
+      sublabel: 'за весь час',
+    },
+    {
+      id: 'years',
+      value: 14,
+      suffix: undefined,
+      label: 'років',
+      sublabel: 'на ринку',
+    },
+    {
+      id: 'industries',
+      value: 7,
+      suffix: undefined,
+      label: 'галузей',
+      sublabel: 'бізнесу',
+    },
+    {
+      id: 'active-clients',
+      value: 7,
+      suffix: '+',
+      label: 'активних',
+      sublabel: 'клієнтів',
+    },
+    {
+      id: 'fop-clients',
+      value: 57,
+      suffix: undefined,
+      label: 'ФОП',
+      sublabel: 'підприємців',
+    },
+    {
+      id: 'yuo-clients',
+      value: 11,
+      suffix: undefined,
+      label: 'ЮО',
+      sublabel: 'компаній',
+    },
+  ],
 }

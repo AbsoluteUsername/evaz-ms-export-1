@@ -42,7 +42,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
         <div className="absolute top-0 right-0">
           <div className="flex items-center gap-1 px-3 py-1 bg-teal-500 text-white text-xs font-medium rounded-bl-xl">
             <Star className="w-3 h-3" fill="currentColor" />
-            <span style={{ fontFamily: "'Montserrat', sans-serif" }}>Популярний</span>
+            <span >Популярний</span>
           </div>
         </div>
       )}
@@ -51,7 +51,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
         {/* Title */}
         <h3
           className="text-lg font-semibold text-stone-900 dark:text-white mb-2 pr-20"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          
         >
           {service.title}
         </h3>
@@ -59,7 +59,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
         {/* Target audience */}
         <p
           className="text-sm text-stone-500 dark:text-stone-400 mb-4"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {service.targetAudience}
         </p>
@@ -70,7 +70,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
             className={`text-2xl font-bold ${
               service.popular ? 'text-teal-600 dark:text-teal-400' : 'text-stone-900 dark:text-white'
             }`}
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {service.pricing.display}
           </span>
@@ -85,7 +85,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
               </div>
               <span
                 className="text-sm text-stone-600 dark:text-stone-300 leading-tight"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                
               >
                 {item}
               </span>
@@ -95,7 +95,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="flex items-center gap-1 text-sm text-teal-600 dark:text-teal-400 font-medium pl-8 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {isExpanded ? (
                 <>
@@ -120,7 +120,7 @@ export function ServiceCard({ service, onCtaClick }: ServiceCardProps) {
               ? 'bg-teal-600 text-white hover:bg-teal-700 hover:shadow-lg hover:shadow-teal-500/30'
               : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-teal-600 hover:text-white'
           }`}
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           Отримати консультацію
         </button>

@@ -39,7 +39,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-medium mb-6">
           <Sparkles className="w-4 h-4" />
-          <span style={{ fontFamily: "'Montserrat', sans-serif" }}>{offer.badge}</span>
+          <span >{offer.badge}</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -47,19 +47,19 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
           <div>
             <h3
               className="text-3xl md:text-4xl font-bold mb-3"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              
             >
               {offer.title}
             </h3>
             <p
               className="text-teal-400 font-medium mb-4"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {offer.subtitle}
             </p>
             <p
               className="text-xl text-stone-300 mb-8"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              
             >
               {offer.headline}
             </p>
@@ -68,7 +68,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
             <div className="mb-8">
               <h4
                 className="text-sm font-semibold text-teal-400 uppercase tracking-wider mb-4"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                
               >
                 Що входить
               </h4>
@@ -80,7 +80,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                     </div>
                     <span
                       className="text-sm text-stone-300"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      
                     >
                       {item}
                     </span>
@@ -90,7 +90,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                   <button
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="flex items-center gap-1 text-sm text-teal-400 font-medium pl-8 hover:text-teal-300 transition-colors"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   >
                     {isExpanded ? (
                       <>
@@ -112,7 +112,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
             <button
               onClick={() => onCtaClick(offer.title)}
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold text-lg transition-all duration-300 hover:from-teal-600 hover:to-teal-700 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5 active:translate-y-0"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              
             >
               {offer.cta.text}
             </button>
@@ -126,7 +126,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                 <AlertTriangle className="w-5 h-5 text-rose-400" />
                 <h4
                   className="text-sm font-semibold text-rose-400 uppercase tracking-wider"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  
                 >
                   Ризики без аудиту
                 </h4>
@@ -136,7 +136,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                   <li
                     key={index}
                     className="text-sm text-stone-300 flex items-start gap-2"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   >
                     <span className="text-rose-400 mt-1">•</span>
                     {risk}
@@ -145,7 +145,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
               </ul>
               <p
                 className="mt-4 text-sm text-rose-300 font-medium"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                
               >
                 {offer.warningMessage}
               </p>
@@ -155,7 +155,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
             <div className="p-6 rounded-2xl bg-teal-500/10 border border-teal-500/20">
               <h4
                 className="text-sm font-semibold text-teal-400 uppercase tracking-wider mb-4"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                
               >
                 Що ви отримаєте
               </h4>
@@ -164,7 +164,7 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
                   <li
                     key={index}
                     className="text-sm text-stone-300 flex items-start gap-2"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    
                   >
                     <Check className="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5" />
                     {result}

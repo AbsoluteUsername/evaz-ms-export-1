@@ -41,6 +41,10 @@ export interface Contact {
   phone: PhoneContact
   email: EmailContact
   socialMedia: SocialMediaLink[]
+  workingHours?: {
+    days: string
+    hours: string
+  }
 }
 
 export interface NavigationItem {
@@ -287,3 +291,9 @@ export interface ToastProps {
   onDismiss: () => void
   duration?: number
 }
+
+// =============================================================================
+// Export Clients Section Types
+// =============================================================================
+
+export * from './clients'

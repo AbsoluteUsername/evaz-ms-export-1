@@ -1,12 +1,19 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { Menu } from 'lucide-react'
+import { Menu, Instagram, Facebook, Send, Clock } from 'lucide-react'
 import Image from 'next/image'
 import type { HeaderProps } from '@/types'
 
+const socialIconMap: Record<string, typeof Instagram> = {
+  instagram: Instagram,
+  facebook: Facebook,
+  telegram: Send,
+}
+
 export function Header({
   company,
+  contact,
   navigation,
   onCtaClick,
   onMenuToggle,
@@ -50,10 +57,10 @@ export function Header({
       style={{ backgroundColor: '#e6dbd0' }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[60px] md:h-[70px]">
+        <div className="flex items-center justify-between h-[70px] md:h-[80px]">
           {/* Logo */}
           <a href="#" className="flex items-center shrink-0 group">
-            <div className="relative h-10 md:h-12 w-32 md:w-36 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-12 md:h-14 w-36 md:w-40 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/assets/logo/logo-green.png"
                 alt={company.name}
@@ -64,6 +71,21 @@ export function Header({
             </div>
           </a>
 
+          {/* Center Section: Working Hours */}
+          <div className="hidden lg:flex items-center gap-6">
+            {/* Working Hours */}
+            {contact.workingHours && (
+              <div className="flex items-center gap-2 text-stone-600 dark:text-stone-300">
+                <Clock className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                <div className="text-sm">
+                  <span className="font-medium">{contact.workingHours.days}</span>
+                  <span className="mx-1.5">•</span>
+                  <span>{contact.workingHours.hours}</span>
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
@@ -71,23 +93,46 @@ export function Header({
                 key={item.id}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="relative text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-500 after:transition-all after:duration-300 hover:after:w-full"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                className="relative text-base font-medium text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-500 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <a
-            href="#contact"
-            onClick={handleCtaClick}
-            className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-teal-600 text-white text-sm font-medium hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 hover:-translate-y-0.5"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            Отримати консультацію
-          </a>
+          {/* Right Section: Social Icons & CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-3">
+              {contact.socialMedia
+                .filter((social) => social.active)
+                .map((social) => {
+                  const Icon = socialIconMap[social.id.toLowerCase()]
+                  if (!Icon) return null
+                  return (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-stone-600 dark:text-stone-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                      aria-label={social.platform}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </a>
+                  )
+                })}
+            </div>
+
+            {/* Desktop CTA */}
+            <a
+              href="#contact"
+              onClick={handleCtaClick}
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-teal-600 text-white text-base font-medium hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 hover:-translate-y-0.5"
+            >
+              Отримати консультацію
+            </a>
+          </div>
 
           {/* Mobile Hamburger */}
           <button

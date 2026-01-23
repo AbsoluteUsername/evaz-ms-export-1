@@ -33,7 +33,7 @@ export function AudienceCard({ audience, onClick }: AudienceCardProps) {
           </div>
           <span
             className="px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 text-xs font-medium"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             {audience.type}
           </span>
@@ -42,7 +42,7 @@ export function AudienceCard({ audience, onClick }: AudienceCardProps) {
         {/* Title */}
         <h3
           className="text-lg font-semibold text-stone-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          
         >
           {audience.title}
         </h3>
@@ -50,7 +50,7 @@ export function AudienceCard({ audience, onClick }: AudienceCardProps) {
         {/* Role */}
         <p
           className="text-sm text-stone-500 dark:text-stone-400 mb-3"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {audience.role}
         </p>
@@ -58,7 +58,7 @@ export function AudienceCard({ audience, onClick }: AudienceCardProps) {
         {/* Needs */}
         <p
           className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          
         >
           {audience.needs}
         </p>
@@ -67,7 +67,7 @@ export function AudienceCard({ audience, onClick }: AudienceCardProps) {
         <div className="mt-4 flex items-center gap-2 text-teal-600 dark:text-teal-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
           <span
             className="text-sm font-medium"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            
           >
             Дізнатися більше
           </span>
