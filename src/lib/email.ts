@@ -62,16 +62,8 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
                 <td style="padding: 12px 0; border-bottom: 1px solid #e7e5e4;">
                   <strong style="color: #57534e;">Телефон:</strong>
                 </td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #e7e5e4;">
-                  <a href="tel:${phone}" style="color: #0d9488; text-decoration: none;">${phone}</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding: 12px 0; border-bottom: 1px solid #e7e5e4;">
-                  <strong style="color: #57534e;">Тип клієнта:</strong>
-                </td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #e7e5e4; color: #1c1917;">
-                  ${clientType}
+                  ${phone}
                 </td>
               </tr>
               <tr>
@@ -93,9 +85,9 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
             </table>
 
             <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #e7e5e4;">
-              <a href="tel:${phone}" style="display: inline-block; background: #0d9488; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                Зателефонувати
-              </a>
+              <div style="display: inline-block; background: #0d9488; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600;">
+                📞 Зателефонувати: ${phone}
+              </div>
             </div>
           </div>
 
@@ -113,7 +105,6 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
 Пакет: ${packageName}
 Ім'я: ${name}
 Телефон: ${phone}
-Тип клієнта: ${clientType}
 Коментар: ${comment || 'Не вказано'}
 Дата та час: ${formattedDate}
 
@@ -127,13 +118,21 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
       return { success: true }
     }
 
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: EMAIL_FROM,
       to: EMAIL_TO,
       subject,
       html: htmlContent,
       text: textContent,
     })
+
+    if (result.error) {
+      console.error('Resend API Error:', result.error)
+      return {
+        success: false,
+        error: result.error.message || 'Failed to send email'
+      }
+    }
 
     return { success: true }
   } catch (error) {

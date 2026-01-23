@@ -81,7 +81,7 @@ export function ContactForm({
         phone: formData.phone.replace(/\s/g, ''),
         clientType: formData.clientType as ContactFormData['clientType'],
         comment: formData.comment || null,
-        packageName,
+        packageName: formData.clientType || packageName,
         timestamp: new Date().toISOString(),
         source: 'landing_page',
       }

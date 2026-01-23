@@ -16,6 +16,24 @@ interface ContactRequestBody {
   source?: string
 }
 
+// Map package value to client type
+function getClientTypeFromPackage(packageValue: string): string {
+  if (packageValue.startsWith('fop-')) return 'ФОП'
+  if (packageValue.startsWith('tov-')) return 'ТОВ'
+  if (packageValue === 'individual-person') return 'Фізична особа'
+  if (packageValue === 'payroll-module') return 'ТОВ' // Payroll is typically for companies
+  if (packageValue === 'prro-connection') return 'ФОП' // PRRO typically for FOP
+  if (packageValue === 'annual-reporting-audit') return 'ФОП'
+  if (packageValue === 'general') return 'ФОП'
+
+  // Fallback: check if it's already a client type
+  if (CLIENT_TYPES.includes(packageValue as typeof CLIENT_TYPES[number])) {
+    return packageValue
+  }
+
+  return 'ФОП' // Default fallback
+}
+
 function validateContactData(data: ContactRequestBody): { valid: boolean; errors: string[] } {
   const errors: string[] = []
 
@@ -37,11 +55,9 @@ function validateContactData(data: ContactRequestBody): { valid: boolean; errors
     }
   }
 
-  // Client type validation
+  // Client type validation - accept package values
   if (!data.clientType || typeof data.clientType !== 'string') {
     errors.push("Тип клієнта є обов'язковим полем")
-  } else if (!CLIENT_TYPES.includes(data.clientType as typeof CLIENT_TYPES[number])) {
-    errors.push('Невірний тип клієнта')
   }
 
   // Comment validation (optional)
@@ -77,7 +93,7 @@ export async function POST(request: NextRequest) {
     const contactData: ContactFormData = {
       name: body.name.trim(),
       phone: body.phone.replace(/\s/g, ''),
-      clientType: body.clientType as ContactFormData['clientType'],
+      clientType: getClientTypeFromPackage(body.clientType) as ContactFormData['clientType'],
       comment: body.comment?.trim() || null,
       packageName: body.packageName,
       timestamp: body.timestamp || new Date().toISOString(),
