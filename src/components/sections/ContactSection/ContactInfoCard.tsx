@@ -60,29 +60,37 @@ export function ContactInfoCard({
           {/* Contact methods */}
           <div className="space-y-6">
             {/* Phone */}
-            <a
-              href={contactInfo.phone.href}
-              onClick={() => onPhoneClick?.()}
-              className="group flex items-center gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-teal-500/50 hover:scale-[1.02]"
-            >
+            <div className="group flex items-center gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-teal-500/50">
               <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-lg group-hover:shadow-teal-500/30 transition-shadow duration-300">
                 <Phone className="w-6 h-6 text-white" strokeWidth={1.5} />
               </div>
               <div>
                 <p
                   className="text-sm text-stone-400 mb-1"
-                  
+
                 >
-                  Телефон
+                  Телефони
                 </p>
-                <p
-                  className="text-lg font-semibold text-white group-hover:text-teal-400 transition-colors"
-                  
-                >
-                  {contactInfo.phone.display}
-                </p>
+                <div className="space-y-1">
+                  <a
+                    href={contactInfo.phone.href}
+                    onClick={() => onPhoneClick?.()}
+                    className="block text-lg font-semibold text-white hover:text-teal-400 transition-colors"
+                  >
+                    {contactInfo.phone.display}
+                  </a>
+                  {contactInfo.secondaryPhone && (
+                    <a
+                      href={contactInfo.secondaryPhone.href}
+                      onClick={() => onPhoneClick?.()}
+                      className="block text-lg font-semibold text-white hover:text-teal-400 transition-colors"
+                    >
+                      {contactInfo.secondaryPhone.display}
+                    </a>
+                  )}
+                </div>
               </div>
-            </a>
+            </div>
 
             {/* Email */}
             <a

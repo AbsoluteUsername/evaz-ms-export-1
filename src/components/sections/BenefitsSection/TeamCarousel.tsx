@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
 const carouselImages = [
-  '/assets/benefits-carusel-imgs/foto-4.webp',
-  '/assets/benefits-carusel-imgs/foto-12.webp',
-  '/assets/benefits-carusel-imgs/foto-21.webp',
-  '/assets/benefits-carusel-imgs/foto-50.webp',
   '/assets/benefits-carusel-imgs/foto-212.webp',
-  '/assets/benefits-carusel-imgs/foto-219.webp',
+  '/assets/benefits-carusel-imgs/foto-123.jpg',
+  '/assets/benefits-carusel-imgs/foto-4.webp',
+  '/assets/benefits-carusel-imgs/foto-18.jpg',
+  '/assets/benefits-carusel-imgs/foto-40 (1).jpg',
+  '/assets/benefits-carusel-imgs/foto-52.jpg',
 ]
 
 export function TeamCarousel() {

@@ -236,6 +236,7 @@ export interface WorkingHours {
 
 export interface ContactInfo {
   phone: PhoneContact
+  secondaryPhone?: PhoneContact
   email: EmailContact
   messengers: Messenger[]
   workingHours: WorkingHours

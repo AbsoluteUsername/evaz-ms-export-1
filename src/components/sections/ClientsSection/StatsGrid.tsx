@@ -12,7 +12,7 @@ export function StatsGrid({ statistics, animateOnScroll = true }: StatsGridProps
   return (
     <div
       data-testid="stats-grid"
-      className="grid grid-cols-2 gap-4 md:gap-6 auto-rows-fr"
+      className="grid grid-cols-1 gap-4 md:gap-6"
     >
       {statistics.map((stat) => (
         <StatCard

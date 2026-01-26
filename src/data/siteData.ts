@@ -26,8 +26,8 @@ export const company: Company = {
   physicalOffice: true,
   story: {
     shortDescription: 'ЕВАЗ-МС працює з 2021 року. Ми починали як невеликий офіс бухгалтерського супроводу, а з часом виросли у компанію з командою професійних бухгалтерів та системною роботою.',
-    milestone2024: 'У 2024–2025 роках до управління приєдналася друга власниця — експерт зі стратегії, автоматизації, оптимізації та розвитку бізнесу, що посилило компанію подвійною експертизою.',
-    currentState: 'Сьогодні ЕВАЗ-МС — це стабільна сервісна компанія з фізичним офісом, подвійним контролем якості та повним супроводом ФОП, ТОВ і фізичних осіб.',
+    milestone2024: 'У 2024–2025 роках до управління приєдналася друга власниця - експерт зі стратегії, автоматизації, оптимізації та розвитку бізнесу, що посилило компанію подвійною експертизою.',
+    currentState: 'Сьогодні ЕВАЗ-МС - це стабільна сервісна компанія з фізичним офісом, подвійним контролем якості та повним супроводом ФОП, ТОВ і фізичних осіб.',
   },
 }
 
@@ -56,7 +56,7 @@ export const contact: Contact = {
 export const navigation: NavigationItem[] = [
   { id: 'services', label: 'Послуги', href: '#services', type: 'anchor' },
   { id: 'about', label: 'Про нас', href: '#about', type: 'anchor' },
-  { id: 'clients', label: 'Клієнти', href: '#clients', type: 'anchor' },
+  { id: 'clients', label: 'Наші Клієнти', href: '#clients', type: 'anchor' },
   { id: 'contact', label: 'Контакти', href: '#contact', type: 'anchor' },
 ]
 
@@ -68,8 +68,8 @@ export const footer: Footer = {
 
 export const heroContent: HeroContent = {
   headline: 'Ми робимо складне простим',
-  subheadline: 'Від щоденного супроводу ФОП та ТОВ до аудиту фізичних осіб та річної звітності',
-  description: 'Обирайте формат, який підходить саме вам',
+  subheadline: 'Від разового звіту до постійного супроводу Вашого бізнесу',
+  description: 'Обирайте формат, який підходить саме Вам',
   cta: { text: 'Обрати пакет послуг', action: 'scroll-to-services' },
   secondaryCta: { text: 'Отримати консультацію', action: 'open-modal' },
 }
@@ -78,7 +78,7 @@ export const audiences: Audience[] = [
   {
     id: 'fop',
     type: 'ФОП',
-    title: 'Фізична особа — підприємець',
+    title: 'Фізична особа - підприємець',
     role: 'Власник бізнесу, самозайнята особа',
     status: 'Знає, що повинен подавати звітність, або не впевнений у правильності її подання',
     needs: 'Професійне ведення звітності без помилок та ризиків',
@@ -297,6 +297,23 @@ export const additionalServices: ServicePackage[] = [
     ],
     priority: true,
   },
+  {
+    id: 'prro-support',
+    title: 'Супровід ПРРО',
+    targetAudience: 'ФОП та ТОВ, які вже працюють з ПРРО',
+    pricing: { display: 'індивідуально', type: 'individual' },
+    includes: [
+      'Перевірка коректності налаштувань діючого ПРРО',
+      'Періодичний контроль коректності роботи ПРРО',
+      'Контроль відкриття та закриття змін',
+      'Контроль формування та збереження Z-звітів',
+      'Контроль коректності чеків (обов\'язкові реквізити, номенклатура)',
+      'Супровід у разі запитів податкових органів щодо ПРРО (в межах компетенції)',
+      'Контроль строків дії КЕП і ключів касира, інформування про необхідність продовження',
+      'Контроль оплат за платформи ПРРО / касові сервіси',
+      'Консультування з питань роботи з ПРРО',
+    ],
+  },
 ]
 
 export const premiumOffer: PremiumOffer = {
@@ -304,7 +321,7 @@ export const premiumOffer: PremiumOffer = {
   badge: 'Преміальна сезонна пропозиція',
   title: 'Річна звітність + Аудит кабінету платника податків',
   subtitle: 'Для ФОП та фізичних осіб',
-  headline: 'Будь спокійний. Ми перевіримо все за тебе.',
+  headline: 'Будьте спокійні. Ми перевіримо все за Вас.',
   targetAudience: {
     fop: [
       'ФОП, які давно не перевіряли кабінет',
@@ -325,7 +342,7 @@ export const premiumOffer: PremiumOffer = {
     'Перевірка неподаних або помилкових декларацій',
     'Аналіз, чи зобов\'язана особа подавати річну декларацію',
     'Формування та подання річної звітності ФОП',
-    'Формування декларації для фізичних осіб (за потреби)',
+    'Формування та подання декларації для фізичних осіб (за потреби)',
     'Контроль прийняття звітів податковою',
     'Консультація за результатами аудиту',
   ],
@@ -340,10 +357,10 @@ export const premiumOffer: PremiumOffer = {
   warningMessage: 'Важливо: більшість клієнтів дізнаються про борги вже тоді, коли питання стало критичним.',
   results: [
     'Повна ясність по своїй податковій ситуації',
-    'Розуміння, чи є ризики — і які саме',
+    'Розуміння, чи є ризики - і які саме',
     'Закрите питання річної звітності',
     'Відчуття контролю і спокою',
-    "Впевненість, що немає 'сюрпризів' від податкової",
+    "Впевненість, що немає «сюрпризів» від податкової",
   ],
   cta: { text: 'Перевірити свій податковий кабінет', action: 'open-modal' },
 }
@@ -359,7 +376,7 @@ export const benefits: Benefit[] = [
   {
     id: 2,
     title: 'Спокій і впевненість у фінансовій безпеці',
-    description: "Податки і звітність ведуться правильно та вчасно. Відсутні приховані ризики й непередбачувані 'сюрпризи'. Чітке розуміння своєї податкової ситуації.",
+    description: "Податки і звітність ведуться правильно та вчасно. Відсутні приховані ризики й непередбачувані «сюрпризи». Чітке розуміння своєї податкової ситуації.",
     icon: 'shield-check',
     solves: [1, 2],
   },
@@ -373,10 +390,10 @@ export const benefits: Benefit[] = [
 ]
 
 export const differentiators: Differentiator[] = [
-  { id: 1, feature: 'Дві власниці з різною експертизою', description: 'Стратегія, фінанси, управління, автоматизація, оптимізація, розвиток + практичний бухгалтерський облік ФОП і ТОВ', icon: 'users' },
+  { id: 1, feature: 'Дві власниці з різною експертизою та досвідом', description: 'Стратегія, фінанси, управління, автоматизація, оптимізація, розвиток + практичний бухгалтерський облік ФОП і ТОВ', icon: 'users' },
   { id: 2, feature: 'Подвійний контроль якості', description: 'Усі процеси проходять подвійну перевірку, що гарантує надійність і повну відсутність критичних помилок', icon: 'check-square' },
-  { id: 3, feature: 'Фізичний офіс і команда', description: 'Не фрілансери — структурована компанія з офісом та командою бухгалтерів', icon: 'building' },
-  { id: 4, feature: 'Щоденний моніторинг кабінету платника', description: 'Те, чого майже ніхто не робить системно — контроль ризиків та аудит податкового стану', icon: 'eye' },
+  { id: 3, feature: 'Фізичний офіс і Команда', description: 'Не фрілансери - структурована компанія з офісом та командою бухгалтерів', icon: 'building' },
+  { id: 4, feature: 'Щомісячний моніторинг кабінету платника', description: 'Те, чого майже ніхто не робить системно - контроль ризиків та аудит податкового стану', icon: 'eye' },
   { id: 5, feature: 'Особиста відповідальність власниць', description: 'Ми беремо на себе не лише технічні фінансові задачі, а й повну відповідальність за результат', icon: 'award' },
   { id: 6, feature: 'Прозора комунікація', description: 'Пояснюємо просто і зрозуміло, без складної термінології', icon: 'message-circle' },
 ]
@@ -411,6 +428,7 @@ export const formConfig: FormConfig = {
       { value: 'payroll-module', label: 'Модуль: Зарплатний проєкт (кадри + ЗП)' },
       { value: 'individual-person', label: 'Фізична особа (не ФОП)' },
       { value: 'prro-connection', label: 'Підключення і супровід ПРРО' },
+      { value: 'prro-support', label: 'Супровід ПРРО' },
       // Premium
       { value: 'annual-reporting-audit', label: 'Річна звітність + Аудит кабінету платника податків' },
       // General
@@ -420,11 +438,12 @@ export const formConfig: FormConfig = {
     { name: 'packageName', type: 'hidden', required: true, autoPopulated: true },
   ],
   submitButton: { text: 'Надіслати заявку', loadingText: 'Надсилаємо...' },
-  messages: { success: "Дякуємо! Ми отримали Вашу заявку і зв'яжемось з вами найближчим часом.", error: 'Виникла помилка. Будь ласка, спробуйте ще раз або зателефонуйте нам за номером +380970094566' },
+  messages: { success: "Дякуємо! Ми отримали Вашу заявку і зв’яжемось з Вами протягом робочого дня.", error: 'Виникла помилка. Будь ласка, спробуйте ще раз або зателефонуйте нам за номером +380970094566' },
 }
 
 export const contactInfo: ContactInfo = {
   phone: { display: '+380 97 009 45 66', raw: '+380970094566', href: 'tel:+380970094566' },
+  secondaryPhone: { display: '+380 68 019 31 00', raw: '+380680193100', href: 'tel:+380680193100' },
   email: { primary: 'ehwazms@gmail.com', href: 'mailto:ehwazms@gmail.com' },
   messengers: [
     { id: 'telegram', name: 'Telegram', icon: 'telegram', url: 'https://t.me/evazms', active: true },
@@ -436,7 +455,7 @@ export const contactInfo: ContactInfo = {
 export const contactSectionContent: SectionContent = {
   title: "Зв'яжіться з нами",
   subtitle: "Оберіть зручний для вас спосіб зв'язку",
-  ctaText: 'Або залиште заявку і ми вам зателефонуємо',
+  ctaText: 'Залиште заявку і ми вам зателефонуємо',
 }
 
 // =============================================================================
@@ -518,6 +537,42 @@ export const clientsSectionContent: ClientsSectionContent = {
       logoType: 'logo',
       website: undefined,
     },
+    {
+      id: 'startkr',
+      name: 'Старт КР',
+      fullName: 'Старт КР',
+      activityType: 'Оптова торгівля будівельними матеріалами та санітарно-технічним обладнанням',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2018,
+      logo: '/assets/clients/startKR.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+    {
+      id: 'panfilovy',
+      name: 'Panfilov & Company',
+      fullName: 'Panfilov & Company',
+      activityType: 'Оптова торгівля овочами та фруктами',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2018,
+      logo: '/assets/clients/panfilovy.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
+    {
+      id: 'senior_pomidor',
+      name: 'Синьйор Помідор',
+      fullName: 'Синьйор Помідор',
+      activityType: 'Роздрібна торгівля овочами та фруктами, мережа магазинів',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2016,
+      logo: '/assets/clients/senior_pomidor.jpg',
+      logoType: 'logo',
+      website: undefined,
+    },
   ],
   statistics: [
     {
@@ -540,27 +595,6 @@ export const clientsSectionContent: ClientsSectionContent = {
       suffix: undefined,
       label: 'галузей',
       sublabel: 'бізнесу',
-    },
-    {
-      id: 'active-clients',
-      value: 7,
-      suffix: '+',
-      label: 'активних',
-      sublabel: 'клієнтів',
-    },
-    {
-      id: 'fop-clients',
-      value: 57,
-      suffix: undefined,
-      label: 'ФОП',
-      sublabel: 'підприємців',
-    },
-    {
-      id: 'yuo-clients',
-      value: 11,
-      suffix: undefined,
-      label: 'ЮО',
-      sublabel: 'компаній',
     },
   ],
 }

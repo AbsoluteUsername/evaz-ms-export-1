@@ -52,17 +52,41 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
               {offer.title}
             </h3>
             <p
-              className="text-teal-400 font-medium mb-4"
-              
-            >
-              {offer.subtitle}
-            </p>
-            <p
-              className="text-xl text-stone-300 mb-8"
-              
+              className="text-xl text-stone-300 mb-6"
+
             >
               {offer.headline}
             </p>
+
+            {/* Target Audience */}
+            <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <h4 className="text-sm font-semibold text-teal-400 mb-2">
+                  Для ФОП, які:
+                </h4>
+                <ul className="space-y-1">
+                  {offer.targetAudience.fop.map((item, index) => (
+                    <li key={index} className="text-sm text-stone-300 flex items-start gap-2">
+                      <span className="text-teal-400 mt-0.5">•</span>
+                      <span>{item.replace(/^ФОП, які\s*/i, '')}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-teal-400 mb-2">
+                  Для Фізичних осіб, які:
+                </h4>
+                <ul className="space-y-1">
+                  {offer.targetAudience.individuals.map((item, index) => (
+                    <li key={index} className="text-sm text-stone-300 flex items-start gap-2">
+                      <span className="text-teal-400 mt-0.5">•</span>
+                      <span>{item.replace(/^Фізичні особи, які\s*/i, '')}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
             {/* What's included */}
             <div className="mb-8">
@@ -125,14 +149,14 @@ export function PremiumOfferCard({ offer, onCtaClick }: PremiumOfferCardProps) {
               <div className="flex items-center gap-2 mb-4">
                 <AlertTriangle className="w-5 h-5 text-rose-400" />
                 <h4
-                  className="text-sm font-semibold text-rose-400 uppercase tracking-wider"
-                  
+                  className="text-xs font-semibold text-rose-400 uppercase tracking-wider"
+
                 >
-                  Ризики без аудиту
+                  Основні ризики, які закриває послуга
                 </h4>
               </div>
               <ul className="space-y-2">
-                {offer.risks.slice(0, 4).map((risk, index) => (
+                {offer.risks.map((risk, index) => (
                   <li
                     key={index}
                     className="text-sm text-stone-300 flex items-start gap-2"
