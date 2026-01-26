@@ -100,7 +100,7 @@ export function BenefitsSection({
               className="text-2xl font-bold text-stone-900 dark:text-white mb-6"
               
             >
-              Часті питання
+              Відповіді на популярні запитання
             </h3>
             <div className="flex-1">
               <FAQAccordion items={faqItems} />
@@ -115,7 +115,7 @@ export function BenefitsSection({
             className="px-8 py-4 rounded-xl bg-teal-600 text-white font-semibold text-lg transition-all duration-300 hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5 active:translate-y-0"
             
           >
-            Отримати безкоштовну консультацію
+            Отримати консультацію
           </button>
         </div>
       </div>

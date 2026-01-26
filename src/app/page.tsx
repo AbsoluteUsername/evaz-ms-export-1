@@ -56,7 +56,7 @@ export default function Home() {
     console.log('Form submitted:', data)
     closeContactModal()
     setToast({
-      message: "Дякуємо! Ми зв'яжемось з вами найближчим часом.",
+      message: "Дякуємо! Ми отримали Вашу заявку і зв’яжемось з Вами протягом робочого дня.",
       type: 'success',
       isVisible: true,
     })

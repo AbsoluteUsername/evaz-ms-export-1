@@ -26,7 +26,7 @@ Full-viewport hero section featuring the main headline "Ми робимо скл
 ## Key Content
 
 - **Headline:** "Ми робимо складне простим"
-- **Subheadline:** "Від щоденного супроводу ФОП та ТОВ до аудиту фізичних осіб та річної звітності"
+- **Subheadline:** "Від разового звіту до постійного супроводу Вашого бізнесу"
 - **Primary CTA:** "Обрати пакет послуг"
 - **Secondary CTA:** "Отримати консультацію"
 - **Audiences:** ФОП, Фізична особа, ТОВ
