@@ -37,6 +37,11 @@ export const contact: Contact = {
     raw: '+380970094566',
     href: 'tel:+380970094566',
   },
+  secondaryPhone: {
+    display: '+380 68 019 31 00',
+    raw: '+380680193100',
+    href: 'tel:+380680193100',
+  },
   email: {
     primary: 'ehwazms@gmail.com',
     href: 'mailto:ehwazms@gmail.com',
@@ -447,14 +452,14 @@ export const contactInfo: ContactInfo = {
   email: { primary: 'ehwazms@gmail.com', href: 'mailto:ehwazms@gmail.com' },
   messengers: [
     { id: 'telegram', name: 'Telegram', icon: 'telegram', url: 'https://t.me/evazms', active: true },
-    { id: 'viber', name: 'Viber', icon: 'viber', url: '#', active: true },
+    { id: 'viber', name: 'Viber', icon: 'viber', url: 'viber://contact?number=%2B380970094566', active: true },
   ],
   workingHours: { days: 'Пн-Пт', hours: '9:00 - 17:00' },
 }
 
 export const contactSectionContent: SectionContent = {
   title: "Зв'яжіться з нами",
-  subtitle: "Оберіть зручний для вас спосіб зв'язку",
+  subtitle: "Оберіть зручний для Вас спосіб зв'язку",
   ctaText: 'Залиште заявку і ми вам зателефонуємо',
 }
 
@@ -521,7 +526,7 @@ export const clientsSectionContent: ClientsSectionContent = {
       industry: 'trade',
       industryIcon: 'ShoppingCart',
       partnershipYear: 2012,
-      logo: '/assets/clients/astel.jpg',
+      logo: '/assets/clients/astel.webp',
       logoType: 'logo',
       website: undefined,
     },
@@ -573,13 +578,25 @@ export const clientsSectionContent: ClientsSectionContent = {
       logoType: 'logo',
       website: undefined,
     },
+    {
+      id: 'scarlet',
+      name: 'Скарлет',
+      fullName: 'Скарлет',
+      activityType: 'Салон штор',
+      industry: 'trade',
+      industryIcon: 'ShoppingCart',
+      partnershipYear: 2016,
+      logo: '/assets/clients/scarlet.webp',
+      logoType: 'logo',
+      website: undefined,
+    },
   ],
   statistics: [
     {
       id: 'total-clients',
       value: 68,
       suffix: '+',
-      label: 'клієнтів',
+      label: 'Клієнтів',
       sublabel: 'за весь час',
     },
     {

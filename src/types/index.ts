@@ -39,6 +39,7 @@ export interface SocialMediaLink {
 
 export interface Contact {
   phone: PhoneContact
+  secondaryPhone?: PhoneContact
   email: EmailContact
   socialMedia: SocialMediaLink[]
   workingHours?: {

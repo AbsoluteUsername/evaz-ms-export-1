@@ -152,6 +152,8 @@ export function ContactInfoCard({
                 <a
                   key={messenger.id}
                   href={messenger.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => onMessengerClick?.(messenger.id)}
                   className={`
                     group flex items-center gap-3 px-6 py-4 rounded-2xl

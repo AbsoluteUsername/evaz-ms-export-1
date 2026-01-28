@@ -101,6 +101,20 @@ export function Footer({
                   {contact.phone.display}
                 </a>
               </li>
+              {contact.secondaryPhone && (
+                <li>
+                  <a
+                    href={contact.secondaryPhone.href}
+                    className="flex items-center gap-3 text-sm text-stone-300 hover:text-teal-400 transition-colors group"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-stone-800 group-hover:bg-teal-600 transition-colors">
+                      <Phone className="w-4 h-4" strokeWidth={1.5} />
+                    </span>
+                    {contact.secondaryPhone.display}
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={contact.email.href}

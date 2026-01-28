@@ -18,9 +18,14 @@ export function HeroSection({ content, onPrimaryCta, onSecondaryCta }: HeroSecti
 
   return (
     <section className="relative h-screen flex flex-col justify-center overflow-hidden">
-      {/* Background image */}
+      {/* Background image - mobile */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        style={{ backgroundImage: "url('/assets/hero-section/mobile-version-bg.jpg')" }}
+      />
+      {/* Background image - desktop */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
         style={{ backgroundImage: "url('/assets/hero-section/hero-section-bg-team-front.webp')" }}
       />
       {/* Teal overlay for better text readability */}

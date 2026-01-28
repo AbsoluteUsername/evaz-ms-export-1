@@ -38,11 +38,9 @@ export function ClientSlider({
   const minSwipeDistance = 50
 
   const handlePrev = useCallback(() => {
-    if (activeIndex === 0) return
-
-    const newIndex = activeIndex - 1
-    if (isControlled && onPrev) {
-      onPrev()
+    const newIndex = (activeIndex - 1 + clients.length) % clients.length
+    if (isControlled && onDotClick) {
+      onDotClick(newIndex)
     } else {
       setInternalIndex(newIndex)
     }
@@ -51,14 +49,12 @@ export function ClientSlider({
     if (autoPlayTimerRef.current) {
       clearInterval(autoPlayTimerRef.current)
     }
-  }, [activeIndex, isControlled, onPrev])
+  }, [activeIndex, clients.length, isControlled, onDotClick])
 
   const handleNext = useCallback(() => {
-    if (activeIndex === clients.length - 1) return
-
-    const newIndex = activeIndex + 1
-    if (isControlled && onNext) {
-      onNext()
+    const newIndex = (activeIndex + 1) % clients.length
+    if (isControlled && onDotClick) {
+      onDotClick(newIndex)
     } else {
       setInternalIndex(newIndex)
     }
@@ -67,7 +63,7 @@ export function ClientSlider({
     if (autoPlayTimerRef.current) {
       clearInterval(autoPlayTimerRef.current)
     }
-  }, [activeIndex, clients.length, isControlled, onNext])
+  }, [activeIndex, clients.length, isControlled, onDotClick])
 
   const handleDotClick = useCallback(
     (index: number) => {
@@ -102,9 +98,9 @@ export function ClientSlider({
     const isLeftSwipe = distance > minSwipeDistance
     const isRightSwipe = distance < -minSwipeDistance
 
-    if (isLeftSwipe && activeIndex < clients.length - 1) {
+    if (isLeftSwipe) {
       handleNext()
-    } else if (isRightSwipe && activeIndex > 0) {
+    } else if (isRightSwipe) {
       handlePrev()
     }
 
@@ -137,14 +133,9 @@ export function ClientSlider({
     if (prefersReducedMotion) return
 
     autoPlayTimerRef.current = setInterval(() => {
-      if (isControlled && onNext) {
-        // Let parent handle
-        if (activeIndex < clients.length - 1) {
-          onNext()
-        } else {
-          // Loop back to start
-          if (onDotClick) onDotClick(0)
-        }
+      if (isControlled && onDotClick) {
+        const newIndex = (activeIndex + 1) % clients.length
+        onDotClick(newIndex)
       } else {
         setInternalIndex((prev) => (prev + 1) % clients.length)
       }
@@ -155,7 +146,7 @@ export function ClientSlider({
         clearInterval(autoPlayTimerRef.current)
       }
     }
-  }, [autoPlay, autoPlayInterval, clients.length, activeIndex, isControlled, onNext, onDotClick])
+  }, [autoPlay, autoPlayInterval, clients.length, activeIndex, isControlled, onDotClick])
 
   if (clients.length === 0) {
     return (
@@ -194,7 +185,6 @@ export function ClientSlider({
         <>
           <button
             onClick={handlePrev}
-            disabled={activeIndex === 0}
             aria-label="Попередній клієнт"
             className="
               absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4
@@ -202,7 +192,6 @@ export function ClientSlider({
               bg-white dark:bg-stone-800
               border-2 border-stone-200 dark:border-stone-700
               shadow-lg hover:shadow-xl
-              disabled:opacity-30 disabled:cursor-not-allowed
               transition-all duration-300
               flex items-center justify-center
               hover:scale-110 hover:bg-teal-50 dark:hover:bg-teal-900/30
@@ -214,7 +203,6 @@ export function ClientSlider({
 
           <button
             onClick={handleNext}
-            disabled={activeIndex === clients.length - 1}
             aria-label="Наступний клієнт"
             className="
               absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4
@@ -222,7 +210,6 @@ export function ClientSlider({
               bg-white dark:bg-stone-800
               border-2 border-stone-200 dark:border-stone-700
               shadow-lg hover:shadow-xl
-              disabled:opacity-30 disabled:cursor-not-allowed
               transition-all duration-300
               flex items-center justify-center
               hover:scale-110 hover:bg-teal-50 dark:hover:bg-teal-900/30
