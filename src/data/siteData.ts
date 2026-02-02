@@ -120,7 +120,7 @@ export const fopServices: ServicePackage[] = [
     id: 'fop-ep-1-3-no-vat',
     title: 'ФОП • ЄП 1–3 гр. • без ПДВ • без працівників',
     targetAudience: 'ФОП на ЄП (1–3 група), без ПДВ, без працівників',
-    pricing: { amount: 3000, currency: 'UAH', period: 'month', display: 'від 3 000 грн/міс', type: 'fixed' },
+    pricing: { amount: 1000, currency: 'UAH', period: 'month', display: 'від 1 000 грн/міс', type: 'fixed' },
     includes: [
       'Ведення обліку доходів у довільній формі (помісячно)',
       'Аналіз лімітів доходу (ЄП)',
