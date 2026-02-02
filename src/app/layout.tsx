@@ -31,9 +31,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uk" className={montserrat.variable}>
-      <body className="min-h-screen bg-white dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-body">
-        <FacebookPixel />
+      <head>
+         <FacebookPixel />
         <Inspectlet />
+      </head>
+      <body className="min-h-screen bg-white dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-body">
         {children}
       </body>
     </html>
