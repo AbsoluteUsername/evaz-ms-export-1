@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import FacebookPixel from '@/components/FacebookPixel'
+import Inspectlet from '@/components/Inspectlet'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="uk" className={montserrat.variable}>
       <body className="min-h-screen bg-white dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-body">
         <FacebookPixel />
+        <Inspectlet />
         {children}
       </body>
     </html>
